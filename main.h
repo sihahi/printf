@@ -82,4 +82,19 @@ char *get_precision(char *p, params_t *params, va_list ap);
 /* _printf.c */
 int _printf(const char *format, ...);
 
+/* print_functions.c */
+int print_percent(va_list ap, params_t *params);
+int print_string(va_list ap, params_t *params);
+int print_int(va_list ap, params_t *params);
+int print_char(va_list ap, params_t *params);
+
+/* number.c */
+char *convert(long int num, int base, int flags, params_t *params);
+int print_unsigned(va_list ap, params_t *params);
+int print_address(va_list ap, params_t *params);
+
+/* convert_number.c */
+int print_HEX(va_list ap, params_t *params);
+int print_hex(va_list ap, params_t *params);
+
 #endif
