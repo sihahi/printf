@@ -68,7 +68,7 @@ int print_unsigned(va_list ap, params_t *params)
 
 int print_address(va_list ap, params_t *params)
 {
-	unsigned lon int n = va_arg(ap, unsigned lon int);
+	unsigned long int n = va_arg(ap, unsigned long int);
 	char *str;
 
 	if (!n)
