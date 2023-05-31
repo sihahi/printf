@@ -21,7 +21,7 @@ int _puts(char *str)
 * Return: on success 1;
 */
 
-int _putchar(char c)
+int _putchar(int c)
 {
 	static int i;
 
