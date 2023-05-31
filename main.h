@@ -61,6 +61,9 @@ typedef struct specifier
 int _puts(char *str);
 int _putchar(char c);
 
+/* main.c*/
+int main(void);
+
 /* specifier.c */
 char *get_width(char *s, params_t *params, va_list ap);
 int get_modifier(char *s, params_t *params);
