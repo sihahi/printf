@@ -97,6 +97,8 @@ int print_address(va_list ap, params_t *params);
 /* convert_number.c */
 int print_HEX(va_list ap, params_t *params);
 int print_hex(va_list ap, params_t *params);
+int print_binary(va_list ap, params_t *params);
+int print_octal(va_list ap, params_t *params);
 
 /* print_number.c */
 int _isdigit(int c);
@@ -104,7 +106,5 @@ int _strlen(char *s);
 int print_number(char *str, params_t *params);
 int print_number_right_shift(char *str, params_t *params);
 int print_number_left_shift(char *str, params_t *params);
-int print_binary(va_list ap, params_t *params);
-int print_octal(va_list ap, params_t *params);
 
 #endif
