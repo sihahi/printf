@@ -59,10 +59,7 @@ typedef struct specifier
 
 /* _put.c */
 int _puts(char *str);
-int _putchar(char c);
-
-/* main.c*/
-int main(void);
+sh: 1: :wq: not found
 
 /* specifier.c */
 char *get_width(char *s, params_t *params, va_list ap);
