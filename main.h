@@ -10,7 +10,7 @@
 #define OUTPUT_BUF_SIZE 1024
 #define BUF_FLUSH -1
 
-#define NULL_STRING "(NULL)"
+#define NULL_STRING "(null)"
 
 #define PARAMS_INIT {0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
 
@@ -43,7 +43,7 @@ typedef struct parameters
 	unsigned int precision;
 	unsigned int h_modifier   : 1;
 	unsigned int l_modifier   : 1;
-}paramas_t;
+}params_t;
 
 /**
  * struct specifier - struct token
@@ -65,7 +65,7 @@ int _putchar(char c);
 char *get_width(char *s, params_t *params, va_list ap);
 int get_modifier(char *s, params_t *params);
 int get_flag(char *s, params_t *params);
-int get_print_func(char *s, va_list ap, params-t *params);
+int get_print_func(char *s, va_list ap, params_t *params);
 int (*get_specifier(char *s))(va_list ap, params_t *params);
 
 /* params */
