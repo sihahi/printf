@@ -57,28 +57,28 @@ int print_string(va_list ap, params_t *params)
 	switch ((int)(!str))
 	case 1:
 		str = NULL_STRING;
-		j = pad = _strlen(str);
-		if (params->precision < pad)
-			j = pad = params->precision;
+	j = pad = _strlen(str);
+	if (params->precision < pad)
+		j = pad = params->precision;
 
-		if (params->minus_flag)
-		{
-			if (params->precision != UINT_MAX)
-				for (i = 0; i < pad; i++)
-					sum += _putchar(*str++);
-			else
-				sum += _puts(str);
+	if (params->minus_flag)
+	{
+		if (params->precision != UINT_MAX)
+			for (i = 0; i < pad; i++)
+				sum += _putchar(*str++);
+		else
+			sum += _puts(str);
 		}
-		while (j++ < params->width)
-			sum += _putchar(pad_char);
-		if (!params->minus_flag)
-		{
-			if (params->precision != UINT_MAX)
-				for (i = 0; i < pad; i++)
-					sum += _putchar(*str++);
-			else
-				sum += _puts(str);
-		}i
+	while (j++ < params->width)
+		sum += _putchar(pad_char);
+	if (!params->minus_flag)
+	{
+		if (params->precision != UINT_MAX)
+			for (i = 0; i < pad; i++)
+				sum += _putchar(*str++);
+		else
+			sum += _puts(str);
+		}
 		return (sum);
 }
 
@@ -97,7 +97,7 @@ int print_percent(va_list ap, params_t *params)
 }
 
 /**
- * print_s -custom format specifier
+ * print_s - custom format specifier
  * @ap: argument pointer
  * @params: parameters struct
  * Return: number chars printed
