@@ -8,7 +8,7 @@
 
 int _isdigit(int c)
 {
-	return (c >= '0' && c<= '9');
+	return (c >= '0' && c <= '9');
 }
 
 /**
@@ -38,7 +38,7 @@ int print_number(char *str, params_t *params)
 	unsigned int i = _strlen(str);
 	int neg = (!params->unsign && *str == '-');
 
-	if (!params ->precision && *str == '0' && !str[i])
+	if (!params->precision && *str == '0' && !str[i])
 		str = "";
 	if (neg)
 	{
@@ -68,7 +68,7 @@ int print_number_right_shift(char *str, params_t *params)
 	unsigned int n = 0, neg, neg2, i = _strlen(str);
 	char pad_char = ' ';
 
-	if (params->zero-flag && !params->minus_flag)
+	if (params->zero_flag && !params->minus_flag)
 		pad_char = '0';
 	neg = neg2 = (!params->unsign && *str == '-');
 	if (neg && i < params->width && pad_char == '0' && !params->minus_flag)
@@ -80,7 +80,7 @@ int print_number_right_shift(char *str, params_t *params)
 		i++;
 	if (neg && pad_char == '0')
 		n += _putchar('-');
-	if (params->plus_flag && neg2 && pad_char =='0' && !params->unsign)
+	if (params->plus_flag && neg2 && pad_char == '0' && !params->unsign)
 		n += _putchar('+');
 	else if (!params->plus_flag && params->space_flag && !neg2 &&
 			!params->unsign && params->zero_flag)
@@ -158,13 +158,14 @@ int print_octal(va_list ap, params_t *params)
 {
 	unsigned long l;
 	char *str;
-	int c =0;
+	int c = 0;
 
 	if (params->l_modifier)
 		l = (unsigned long)va_arg(ap, unsigned long);
 	else if (params->h_modifier)
 		l = (unsigned short int)va_arg(ap, unsigned int);
-	else*l = (unsigned int)va_arg(ap, unsigned int);
+	else
+		l = (unsigned int)va_arg(ap, unsigned int);
 	str = convert(l, 8, CONVERT_UNSIGNED, params);
 
 	if (params->hashtag_flag && l)
