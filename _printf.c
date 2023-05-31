@@ -25,14 +25,14 @@ int _printf(const char *format, ...)
 	init_params(&params, ap);
 	if (*p != '%')
 	{
-	sum += _putchar(*p);
-	continue;
+		sum += _putchar(*p);
+		continue;
 	}
 	start = p;
 	p++;
 	while (get_flag(p, &params))
 	{
-	p++;
+		p++;
 	}
 	p = get_width(p, &params, ap);
 	p = get_precision(p, &params, ap);
@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 	else
 		sum += get_print_func(p, ap, &params);
 	}
-	putchar(BUF_FLUSH);
+	_putchar(BUF_FLUSH);
 	va_end(ap);
 	return (sum);
 }
