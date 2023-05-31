@@ -97,13 +97,13 @@ int print_percent(va_list ap, params_t *params)
 }
 
 /**
- * print_s - custom format specifier
+ * print_S - custom format specifier
  * @ap: argument pointer
  * @params: parameters struct
  * Return: number chars printed
  */
 
-int print_s(va_list ap, params_t *params)
+int print_S(va_list ap, params_t *params)
 {
 	char *str = va_arg(ap, char *);
 	char *hex;
